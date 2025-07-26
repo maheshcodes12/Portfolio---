@@ -47,18 +47,18 @@ export default function Home() {
 		{
 			date: "May 2025",
 			text: "Invited to Chair Student Research Competition at CGO 2026",
-			image: "/news.png", // Add actual image path
+			image: "/n1.png", // Add actual image path
 		},
 		{
 			date: "March 2025",
 			text: "Presented conference talk on LLM-Vectorizer at CGO 2025",
-			image: "/news.png",
+			image: "/n1.png",
 		},
 		{
 			date: "Feb 2025",
 			text: "Gave invited LSD seminar at UCSC",
 			link: "https://lsd.ucsc.edu/lsd-seminar/2025wi/",
-			image: "/news.png",
+			image: "/n1.png",
 		},
 	];
 

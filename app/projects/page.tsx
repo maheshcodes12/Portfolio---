@@ -16,7 +16,7 @@ export default function ProjectsPage() {
  backends.'
 					technologies={["LLMS"]}
 					link={"https://github.com/microsoft/Accera"}
-					imageUrl='/project/971.jpg'
+					imageUrl='/project/acc.png'
 				/>
 
 				<ProjectShowcase
@@ -27,7 +27,7 @@ export default function ProjectsPage() {
  equivalence checking at the assembly level.'
 					technologies={["Kernel, Linux"]}
 					link=''
-					imageUrl='/project/971.jpg'
+					imageUrl='/project/ptx.png'
 				/>
 				<ProjectShowcase
 					title='LLM-Vectorizer: LLM-based Verified Loop Vectorizer'
@@ -35,14 +35,14 @@ export default function ProjectsPage() {
  form, and then formally verifies the transformation using SMT solvers.'
 					technologies={["Kernel, Linux"]}
 					link={"https://dl.acm.org/doi/10.1145/3696443.3708929"}
-					imageUrl='/project/971.jpg'
+					imageUrl='/project/llmvect.png'
 				/>
 				<ProjectShowcase
 					title='Dissertation: Improving Compiler Construction Using Formal Methods'
 					description='This dissertation focuses on improving compiler reliability and performance using formal methods, particularly in the context of LLVM. As programming languages become more high-level and processors more specialized, compilers must effectively bridge the growing gap between the two. The core contribution is the development of precise and sound static analyses using SMT solvers to identify code properties essential for optimizations like dead code elimination.'
 					technologies={["Compiler"]}
 					link={"https://github.com/jubitaneja/phd-dissertation"}
-					imageUrl='/project/971.jpg'
+					imageUrl='/project/formal.png'
 				/>
 				<ProjectShowcase
 					title='Testing LLVM’s Static Analyses for Precision and Soundness'
@@ -53,7 +53,7 @@ export default function ProjectsPage() {
  formal methods with practical compiler development, enabling more trustworthy and optimizable code.'
 					technologies={["Compiler"]}
 					link={"https://github.com/jubitaneja/souper-cgo20-artifact"}
-					imageUrl='/project/971.jpg'
+					imageUrl='/project/testing.png'
 				/>
 				<ProjectShowcase
 					title='Souper: Superoptimizer for LLVM IR'
@@ -64,7 +64,7 @@ export default function ProjectsPage() {
  LLVM.'
 					technologies={["Compiler"]}
 					link={"https://github.com/google/souper"}
-					imageUrl='/project/971.jpg'
+					imageUrl='/project/souper.png'
 				/>
 				<ProjectShowcase
 					title='Automatic Generation of a PeepHole Optimizer'
@@ -73,7 +73,7 @@ export default function ProjectsPage() {
  architecture. Mentor: Nick Fitzgerald and Dan Gohman.'
 					technologies={["Compiler"]}
 					link={"https://github.com/jubitaneja/cranelift-peepholes"}
-					imageUrl='/project/971.jpg'
+					imageUrl='/project/peephole.png'
 				/>
 			</div>
 		</main>
