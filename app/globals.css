@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("@react-pdf-viewer/core/lib/styles/index.css");
+
+@layer base {
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 222.2 84% 4.9%;
+		--card: 0 0% 100%;
+		--card-foreground: 222.2 84% 4.9%;
+		--popover: 0 0% 100%;
+		--popover-foreground: 222.2 84% 4.9%;
+		--primary: 222.2 47.4% 11.2%;
+		--primary-foreground: 210 40% 98%;
+		--secondary: 210 40% 96.1%;
+		--secondary-foreground: 222.2 47.4% 11.2%;
+		--muted: 210 40% 96.1%;
+		--muted-foreground: 215.4 16.3% 46.9%;
+		--accent: 210 40% 96.1%;
+		--accent-foreground: 222.2 47.4% 11.2%;
+		--destructive: 0 84.2% 60.2%;
+		--destructive-foreground: 210 40% 98%;
+		--border: 214.3 31.8% 91.4%;
+		--input: 214.3 31.8% 91.4%;
+		--ring: 222.2 84% 4.9%;
+		--radius: 0.5rem;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+}
+
+/* Custom Markdown Styles */
+.markdown-content {
+	@apply text-gray-700 leading-relaxed;
+}
+
+.markdown-content h1 {
+	@apply text-3xl font-bold text-gray-900 mb-6 mt-8 border-b border-gray-200 pb-2;
+}
+
+.markdown-content h2 {
+	@apply text-2xl font-semibold text-gray-900 mb-4 mt-6;
+}
+
+.markdown-content h3 {
+	@apply text-xl font-semibold text-gray-900 mb-3 mt-5;
+}
+
+.markdown-content h4 {
+	@apply text-lg font-semibold text-gray-900 mb-2 mt-4;
+}
+
+.markdown-content p {
+	@apply mb-4 leading-relaxed;
+}
+
+.markdown-content strong {
+	@apply font-semibold text-gray-900;
+}
+
+.markdown-content em {
+	@apply italic;
+}
+
+.markdown-content code {
+	@apply bg-gray-100 px-2 py-1 rounded text-sm font-mono text-gray-800;
+}
+
+.markdown-content pre {
+	@apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-4;
+}
+
+.markdown-content pre code {
+	@apply bg-transparent p-0 text-gray-100;
+}
+
+.markdown-content blockquote {
+	@apply border-l-4 border-gray-300 pl-6 italic text-gray-600 mb-4 bg-gray-50 py-2;
+}
+
+.markdown-content ul {
+	@apply list-disc pl-6 mb-4 space-y-1;
+}
+
+.markdown-content ol {
+	@apply list-decimal pl-6 mb-4 space-y-1;
+}
+
+.markdown-content li {
+	@apply text-gray-700;
+}
+
+.markdown-content a {
+	@apply text-blue-600 underline hover:text-blue-800;
+}
+
+.markdown-content table {
+	@apply w-full border-collapse border border-gray-300 mb-4;
+}
+
+.markdown-content th {
+	@apply border border-gray-300 px-4 py-2 bg-gray-100 font-semibold text-left;
+}
+
+.markdown-content td {
+	@apply border border-gray-300 px-4 py-2;
+}
+
+.markdown-content hr {
+	@apply border-t border-gray-300 my-6;
+}
+
+.markdown-content img {
+	@apply max-w-full h-auto rounded-lg shadow-md mb-4;
+}
