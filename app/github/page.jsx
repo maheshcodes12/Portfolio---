@@ -8,8 +8,8 @@ const GitHubProfile = () => {
 	const [error, setError] = useState(null);
 
 	const username = "maheshcodes12";
-	const token =
-		"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"; // Replace with your actual token
+	// const token =
+	// Replace with your actual token
 
 	const headers = {
 		Authorization: `Bearer ${token}`,
