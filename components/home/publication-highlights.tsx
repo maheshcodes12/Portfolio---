@@ -8,24 +8,24 @@ export default function PublicationHighlights() {
 			id: 1,
 			title: "Souper: A synthesizing superoptimizer",
 			journal: "arXiv preprint arXiv:1711.04422",
-			tags: ["82 citations"],
-			link: "/publications/ethical-considerations",
+			tags: [],
+			link: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=_0828QEAAAAJ&citation_for_view=_0828QEAAAAJ:u5HHmVD_uO8C",
 		},
 		{
 			id: 2,
 			title:
 				"Souper: a synthesizing superoptimizer. CoRR abs/1711.04422 (2017)",
 			journal: "arXiv preprint arXiv:1711.04422",
-			tags: ["13 citations"],
-			link: "/publications/explainable-ml-clinical",
+			tags: [],
+			link: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=_0828QEAAAAJ&citation_for_view=_0828QEAAAAJ:4fKUyHm3Qg0C",
 		},
 		{
 			id: 3,
 			title:
 				"ClassInvGen: Class Invariant Synthesis using Large Language Models",
 			journal: "arXiv preprint arXiv:2502.18917",
-			tags: ["1 citations"],
-			link: "/publications/defending-neural-networks",
+			tags: [],
+			link: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=_0828QEAAAAJ&citation_for_view=_0828QEAAAAJ:LPZeul_q3PIC",
 		},
 	];
 

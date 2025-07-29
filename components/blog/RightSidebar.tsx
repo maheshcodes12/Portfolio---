@@ -52,8 +52,10 @@ export default function BlogSidebar({ author, tags }: any) {
 			<div className='space-y-8 text-sm'>
 				{/* Contributors */}
 				<div>
-					<h2 className='font-semibold text-gray-800 mb-2'>CONTRIBUTERS</h2>
-					<p className='text-gray-600'>{author}</p>
+					<h2 className='font-semibold text-gray-800 mb-2 text-nowrap'>
+						CONTRIBUTERS
+					</h2>
+					<p className='text-gray-600 text-nowrap'>{author}</p>
 				</div>
 
 				{/* Tags */}
@@ -71,7 +73,7 @@ export default function BlogSidebar({ author, tags }: any) {
 				{/* Recent Posts */}
 				<div>
 					<h2 className='font-semibold text-gray-800 mb-2'>RECENT POSTS</h2>
-					<ul className='text-gray-600 space-y-1'>
+					<ul className='text-gray-600 space-y-1 w-full text-nowrap'>
 						{recentPosts.map((post) => (
 							<li key={post._id}>
 								<Link
@@ -91,8 +93,12 @@ export default function BlogSidebar({ author, tags }: any) {
 						{getArchives().map((month, idx) => (
 							<li
 								key={idx}
-								className='text-sm'>
-								{month}
+								className='text-sm text-nowrap'>
+								<Link
+									href={`/blog?archive=${encodeURIComponent(month)}`}
+									className='hover:underline text-blue-600'>
+									{month}
+								</Link>
 							</li>
 						))}
 					</ul>

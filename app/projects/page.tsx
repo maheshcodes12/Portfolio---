@@ -3,7 +3,7 @@ import ProjectShowcase from "@/components/projects/ProjectShowcase";
 export default function ProjectsPage() {
 	return (
 		<main className='max-w-5xl mx-auto px-4 py-10'>
-			<h1 className='text-3xl font-bold mb-8 text-gray-900'>Projects</h1>
+			<h1 className='text-3xl font-bold mb-8 text-gray-900'>Research Projects</h1>
 
 			<div className='space-y-10'>
 				<ProjectShowcase
@@ -16,6 +16,7 @@ export default function ProjectsPage() {
  backends.'
 					technologies={["LLMS"]}
 					link={"https://github.com/microsoft/Accera"}
+					link2={""}
 					imageUrl='/project/acc.png'
 				/>
 
@@ -27,6 +28,7 @@ export default function ProjectsPage() {
  equivalence checking at the assembly level.'
 					technologies={["Kernel, Linux"]}
 					link=''
+					link2={""}
 					imageUrl='/project/ptx.png'
 				/>
 				<ProjectShowcase
@@ -34,7 +36,8 @@ export default function ProjectsPage() {
 					description='Developed a framework that prompts large language models (LLMs) to rewrite scalar loops into vectorized
  form, and then formally verifies the transformation using SMT solvers.'
 					technologies={["Kernel, Linux"]}
-					link={"https://dl.acm.org/doi/10.1145/3696443.3708929"}
+					link={""}
+					link2={"https://dl.acm.org/doi/10.1145/3696443.3708929"}
 					imageUrl='/project/llmvect.png'
 				/>
 				<ProjectShowcase
@@ -42,6 +45,7 @@ export default function ProjectsPage() {
 					description='This dissertation focuses on improving compiler reliability and performance using formal methods, particularly in the context of LLVM. As programming languages become more high-level and processors more specialized, compilers must effectively bridge the growing gap between the two. The core contribution is the development of precise and sound static analyses using SMT solvers to identify code properties essential for optimizations like dead code elimination.'
 					technologies={["Compiler"]}
 					link={"https://github.com/jubitaneja/phd-dissertation"}
+					link2={""}
 					imageUrl='/project/formal.png'
 				/>
 				<ProjectShowcase
@@ -53,6 +57,7 @@ export default function ProjectsPage() {
  formal methods with practical compiler development, enabling more trustworthy and optimizable code.'
 					technologies={["Compiler"]}
 					link={"https://github.com/jubitaneja/souper-cgo20-artifact"}
+					link2={""}
 					imageUrl='/project/testing.png'
 				/>
 				<ProjectShowcase
@@ -64,6 +69,7 @@ export default function ProjectsPage() {
  LLVM.'
 					technologies={["Compiler"]}
 					link={"https://github.com/google/souper"}
+					link2={""}
 					imageUrl='/project/souper.png'
 				/>
 				<ProjectShowcase
@@ -73,6 +79,7 @@ export default function ProjectsPage() {
  architecture. Mentor: Nick Fitzgerald and Dan Gohman.'
 					technologies={["Compiler"]}
 					link={"https://github.com/jubitaneja/cranelift-peepholes"}
+					link2={""}
 					imageUrl='/project/peephole.png'
 				/>
 			</div>

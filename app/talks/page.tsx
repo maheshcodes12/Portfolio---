@@ -11,6 +11,7 @@ export default function TalksPage() {
 				"UC Santa Cruz, Uber Technologies,PNW PLSE 2024, CGO 2025, LATHC 2025.",
 			date: "2024, 2025",
 			type: "Keynote",
+			link:""
 		},
 		{
 			id: 2,
@@ -21,6 +22,8 @@ export default function TalksPage() {
 			date: "June 2020",
 			type: "Invited Talk",
 			video: "https://www.youtube.com/watch?v=de8Ak0nY1hA",
+			link:""
+
 		},
 		{
 			id: 3,
@@ -30,6 +33,8 @@ export default function TalksPage() {
 			date: "October 2017",
 			type: "Guest Lecture",
 			video: "https://www.youtube.com/watch?v=WyMTa2_yNHQ&t=526s",
+			link:"jnn"
+
 		},
 	];
 
@@ -63,7 +68,9 @@ export default function TalksPage() {
 								</h2>
 							</div>
 							<p className='text-gray-600 text-lg mb-2'>{talk.venue}</p>
-							<p className='text-gray-500 mb-4'>{talk.date}</p>
+							<p className='text-gray-500 mb-4'>{talk.date} {talk.link.length > 0 && <span className="text-blue-600"> | Slides</span>}</p>
+							<div className="text-blue-600"></div>
+
 							<div className='w-full flex justify-center'>
 								{talk.video && (
 									<div
@@ -84,7 +91,7 @@ export default function TalksPage() {
 						</div>
 					))}
 				</div>
-				<FlipbookViewer></FlipbookViewer>
+				{/* <FlipbookViewer></FlipbookViewer> */}
 			</div>
 		</main>
 	);

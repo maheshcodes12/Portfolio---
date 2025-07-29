@@ -25,7 +25,7 @@ export default function Header() {
 					<Link
 						href='/projects'
 						className='text-sm font-medium hover:underline underline-offset-4'>
-						Projects
+						Research
 					</Link>
 					<Link
 						href='/papers'

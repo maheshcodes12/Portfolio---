@@ -9,6 +9,7 @@ interface ProjectShowcaseProps {
 	technologies: string[];
 	imageUrl: string;
 	link: string;
+	link2:string;
 }
 
 const ProjectShowcase = ({
@@ -17,6 +18,7 @@ const ProjectShowcase = ({
 	technologies,
 	imageUrl,
 	link,
+	link2
 }: ProjectShowcaseProps) => {
 	return (
 		<div className='bg-white rounded-xl shadow-md p-6 md:flex gap-6'>
@@ -49,11 +51,17 @@ const ProjectShowcase = ({
 				</div>
 
 				<div className='pt-2'>
-					<a
+					{link.length >0 && <a
 						href={`${link}`}
 						target='blank'>
-						Relevat Links - <span className='text-blue-600'>{link}</span>
-					</a>
+						<span className='text-blue-600'>CODE{link2.length > 0 && " | "}</span>
+					</a>}
+					
+					{link2.length > 0 && <a
+						href={`${link2}`}
+						target='blank'>
+						<span className='text-blue-600'>PDF</span>
+					</a>}
 				</div>
 			</div>
 		</div>

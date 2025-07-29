@@ -10,6 +10,7 @@ import {
 	Github,
 	Linkedin,
 	Twitter,
+	Loader,
 	GraduationCap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -25,12 +26,46 @@ export default function ContactPage() {
 		message: "",
 	});
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const [loading, setIsLoading] = useState(false);
+
+	// const handleSubmit = (e: React.FormEvent) => {
+	// 	e.preventDefault();
+	// 	// Handle form submission here
+	// 	console.log("Form submitted:", formData);
+	// 	// Reset form
+	// 	setFormData({ name: "", email: "", subject: "", message: "" });
+	// };
+
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
-		// Handle form submission here
-		console.log("Form submitted:", formData);
-		// Reset form
-		setFormData({ name: "", email: "", subject: "", message: "" });
+		setIsLoading(true);
+		// setStatusMessage(null); // Clear previous messages
+		// setIsError(false);      // Clear previous error state
+
+		try {
+			const response = await fetch("/api/contact", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(formData),
+			});
+
+			if (response.ok) {
+				// setStatusMessage('Message sent successfully! We will get back to you soon.');
+				setFormData({ name: "", email: "", subject: "", message: "" }); // Reset form
+			} else {
+				const errorData = await response.json();
+				// setStatusMessage(errorData.message || 'Failed to send message. Please try again.');
+				// setIsError(true);
+			}
+		} catch (error) {
+			console.error("Submission error:", error);
+			//   setStatusMessage('An unexpected error occurred. Please try again later.');
+			//   setIsError(true);
+		} finally {
+			setIsLoading(false);
+		}
 	};
 
 	const handleChange = (
@@ -53,9 +88,9 @@ export default function ContactPage() {
 					</p>
 				</div>
 
-				<div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
+				<div className='grid grid-cols-1 lg:grid-cols-1 gap-12'>
 					{/* Contact Form */}
-					<div className='bg-white border border-gray-200 rounded-lg p-8'>
+					{/* <div className='bg-white border border-gray-200 rounded-lg p-8'>
 						<h2 className='text-2xl font-semibold text-gray-900 mb-6'>
 							Send a Message
 						</h2>
@@ -114,13 +149,21 @@ export default function ContactPage() {
 								/>
 							</div>
 
-							<Button
-								type='submit'
-								className='w-full'>
-								Send Message
-							</Button>
+							{loading ? (
+								<Button
+									type='submit'
+									className='w-full'>
+									Sending <Loader></Loader>
+								</Button>
+							) : (
+								<Button
+									type='submit'
+									className='w-full'>
+									Send Message
+								</Button>
+							)}
 						</form>
-					</div>
+					</div> */}
 
 					{/* Contact Information */}
 					<div className='space-y-8'>

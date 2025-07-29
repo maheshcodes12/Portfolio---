@@ -45,6 +45,8 @@ interface BlogPost {
 	author: string;
 	authorRole: string;
 	slug: string;
+	mediaType: string;
+	mediaUrl: string;
 }
 
 interface Comment {
@@ -194,7 +196,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 				</div>
 
 				{/* Featured Image */}
-				<div className='relative h-64 md:h-96 mb-8 rounded-lg overflow-hidden'>
+				{/* <div className='relative h-64 md:h-96 mb-8 rounded-lg overflow-hidden'>
 					<Image
 						src={post.image || "/placeholder.svg"}
 						alt={post.title}
@@ -202,6 +204,38 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 						className='object-cover'
 						priority
 					/>
+				</div> */}
+
+				<div className='relative h-96'>
+					{post.mediaType === "video" ? (
+						post.mediaUrl?.includes("youtube.com") ||
+						post.mediaUrl?.includes("youtu.be") ? (
+							<iframe
+								src={`https://www.youtube.com/embed/${
+									post.mediaUrl.includes("youtu.be")
+										? post.mediaUrl.split("/").pop()?.split("?")[0] || ""
+										: post.mediaUrl.split("v=")[1]?.split("&")[0] || ""
+								}`}
+								className='w-full h-full'
+								frameBorder='0'
+								allowFullScreen
+							/>
+						) : (
+							<video
+								src={post.mediaUrl}
+								controls
+								className='w-full h-full object-cover'>
+								Your browser does not support the video tag.
+							</video>
+						)
+					) : (
+						<Image
+							src={post.mediaUrl || "/placeholder.svg"}
+							alt={post.title}
+							fill
+							className='object-cover'
+						/>
+					)}
 				</div>
 
 				{/* Content */}

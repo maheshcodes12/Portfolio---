@@ -38,7 +38,16 @@ export async function GET() {
 export async function POST(request) {
 	try {
 		const body = await request.json();
-		const { title, excerpt, content, tags, image, readTime } = body;
+		const {
+			title,
+			excerpt,
+			content,
+			tags,
+			image,
+			readTime,
+			mediaType,
+			mediaUrl,
+		} = body;
 
 		const slug = generateSlug(title);
 
@@ -48,6 +57,8 @@ export async function POST(request) {
 			content,
 			tags,
 			image: image || "/placeholder.svg?height=400&width=800",
+			mediaType,
+			mediaUrl,
 			readTime,
 			slug,
 			author: "Jubi Taneja",

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Select } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { X, Plus } from "lucide-react";
@@ -23,6 +24,8 @@ export default function WriteBlogPage() {
 		tags: [],
 		image: "",
 		readTime: "",
+		mediaType: "",
+		mediaUrl: "",
 	});
 
 	const [newTag, setNewTag] = useState("");
@@ -163,15 +166,37 @@ export default function WriteBlogPage() {
 					</div>
 
 					<div>
-						<Label htmlFor='image'>Featured Image URL</Label>
-						<Input
-							id='image'
-							value={blogData.image}
+						<label
+							htmlFor='mediaType'
+							className='block text-sm font-medium text-gray-700'>
+							Featured Media Type
+						</label>
+						<select
+							id='mediaType'
+							value={blogData.mediaType}
 							onChange={(e) =>
-								setBlogData({ ...blogData, image: e.target.value })
+								setBlogData({ ...blogData, mediaType: e.target.value })
 							}
-							placeholder='https://example.com/image.jpg'
-							className='mt-1'
+							className='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm'>
+							<option value='image'>Image</option>
+							<option value='video'>Video</option>
+						</select>
+					</div>
+
+					<div>
+						<label
+							htmlFor='mediaUrl'
+							className='block text-sm font-medium text-gray-700'>
+							Featured {blogData.mediaType === "image" ? "Image" : "Video"} URL
+						</label>
+						<input
+							id='mediaUrl'
+							value={blogData.mediaUrl}
+							onChange={(e) =>
+								setBlogData({ ...blogData, mediaUrl: e.target.value })
+							}
+							placeholder={`https://example.com/${blogData.mediaType === "image" ? "image.jpg" : "video.mp4"}`}
+							className='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm'
 						/>
 					</div>
 

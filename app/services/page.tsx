@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { UserCheck, Gavel, Star, Mic, Group, Users } from "lucide-react";
 
-// Icon mapping on frontend only
 const iconMap = {
 	Mentor: <UserCheck className='w-5 h-5 text-gray-700' />,
 	"Peer Reviewer": <Gavel className='w-5 h-5 text-gray-700' />,
@@ -12,7 +11,6 @@ const iconMap = {
 	"Other Roles": <Users className='w-5 h-5 text-gray-700' />,
 };
 
-// Helper to parse date
 function parseDate(dateStr: string): Date {
 	const end = dateStr?.split("–")[1]?.trim() || dateStr.trim();
 	const date = new Date(
@@ -22,7 +20,6 @@ function parseDate(dateStr: string): Date {
 }
 
 export default function ProfessionalInvolvement() {
-	// This would come from your backend API (no icons)
 	const serviceRoles = [
 		{
 			title: "Mentor",
@@ -77,24 +74,23 @@ export default function ProfessionalInvolvement() {
 
 	return (
 		<section className='px-6 py-12 max-w-5xl mx-auto'>
-			<h2 className='text-3xl font-bold mb-10'>Services</h2>
-			<div className='grid md:grid-cols-2 gap-6'>
+			<h2 className='text-4xl font-bold mb-10'>Services</h2>
+			<div className='space-y-6'>
 				{serviceRoles.map((role, idx) => (
 					<div
 						key={idx}
-						className={`border rounded-xl p-6 shadow-sm ${
-							idx == 2 || idx == 3 ? "bg-white" : "bg-gray-50"
-						}`}>
+						className='border rounded-xl p-6 shadow-sm bg-white'>
 						<div className='flex items-center gap-2 mb-3'>
 							<div className='bg-gray-100 p-2 rounded-md'>
 								{iconMap[role.title as keyof typeof iconMap] || (
 									<Users className='w-5 h-5 text-gray-700' />
 								)}
 							</div>
-
-							<h3 className='text-lg font-semibold'>{role.title}</h3>
+							<h3 className='text-xl font-semibold text-gray-900'>
+								{role.title}
+							</h3>
 						</div>
-						<ul className='text-sm text-gray-700 space-y-2'>
+						<ul className='text-md text-gray-700 space-y-2 ml-2'>
 							{[...role.items]
 								.sort(
 									(a, b) =>
@@ -102,19 +98,16 @@ export default function ProfessionalInvolvement() {
 								)
 								.map((item, i) => (
 									<li key={i}>
-										<span className='mr-1 text-sm text-gray-600'>•</span>
+										<span className='mr-1 text-gray-500'>•</span>
 										{"link" in item ? (
-											<Link
-												href={item.link}
-												className='hover:underline'>
+											<Link href={item.link} className='hover:underline'>
 												{item.label}
 											</Link>
 										) : (
 											item.label
 										)}
-
 										{item.date && (
-											<span className='text-gray-500 text-xs block'>
+											<span className='block text-xs text-gray-500'>
 												{item.date}
 											</span>
 										)}
