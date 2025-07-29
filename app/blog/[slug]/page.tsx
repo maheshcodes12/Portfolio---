@@ -364,6 +364,42 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 						Comments ({post.comments.length})
 					</h3>
 
+					
+
+					{/* Comments List */}
+					<div className='space-y-6'>
+						{post.comments.map((comment) => (
+							<div
+								key={comment._id}
+								className='border-l-4 border-gray-200 pl-6'>
+								<div className='flex items-center gap-3 mb-2'>
+									<Avatar className='h-8 w-8'>
+										<AvatarFallback>
+											{comment.name
+												? comment.name.charAt(0).toUpperCase()
+												: "a"}
+										</AvatarFallback>
+									</Avatar>
+									<div>
+										<p className='font-semibold text-gray-900'>
+											{comment.name}
+										</p>
+										<p className='text-sm text-gray-500'>
+											{new Date(comment.createdAt).toLocaleDateString()}
+										</p>
+									</div>
+								</div>
+								<p className='text-gray-700'>{comment.comment}</p>
+							</div>
+						))}
+					</div>
+
+					{post.comments.length === 0 && (
+						<p className='text-gray-600 text-center py-8'>
+							No comments yet. Be the first to comment!
+						</p>
+					)}
+
 					{/* Add Comment Form */}
 					<form
 						onSubmit={handleComment}
@@ -419,45 +455,9 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 							{commenting ? "Posting..." : "Post Comment"}
 						</Button>
 					</form>
-
-					{/* Comments List */}
-					<div className='space-y-6'>
-						{post.comments.map((comment) => (
-							<div
-								key={comment._id}
-								className='border-l-4 border-gray-200 pl-6'>
-								<div className='flex items-center gap-3 mb-2'>
-									<Avatar className='h-8 w-8'>
-										<AvatarFallback>
-											{comment.name
-												? comment.name.charAt(0).toUpperCase()
-												: "a"}
-										</AvatarFallback>
-									</Avatar>
-									<div>
-										<p className='font-semibold text-gray-900'>
-											{comment.name}
-										</p>
-										<p className='text-sm text-gray-500'>
-											{new Date(comment.createdAt).toLocaleDateString()}
-										</p>
-									</div>
-								</div>
-								<p className='text-gray-700'>{comment.comment}</p>
-							</div>
-						))}
-					</div>
-
-					{post.comments.length === 0 && (
-						<p className='text-gray-600 text-center py-8'>
-							No comments yet. Be the first to comment!
-						</p>
-					)}
 				</div>
 			</div>
-			<BlogSidebar
-				author={post.author}
-				tags={post.tags}></BlogSidebar>
+
 		</main>
 	);
 }

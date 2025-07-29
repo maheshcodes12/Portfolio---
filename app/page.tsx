@@ -36,7 +36,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center h-36 md:items-start text-center md:text-left justify-center w-full">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Jubi Taneja</h1>
-            <h2 className="text-base md:text-lg text-gray-600 mt-1 mb-2">PhD in Computer Science</h2>
+            <h2 className="text-base md:text-lg text-gray-600 mt-1 mb-2">Research Engineer at Microsoft Research</h2>
             <Link
               href="/contact"
               className="px-4 py-1.5 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors text-sm"

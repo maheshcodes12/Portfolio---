@@ -62,7 +62,7 @@ export async function POST(request) {
 			readTime,
 			slug,
 			author: "Jubi Taneja",
-			authorRole: "Computer Science Researcher",
+			authorRole: "Research Engineer at Microsoft Research",
 			likes: 0,
 			comments: [],
 			createdAt: new Date(),
