@@ -3,10 +3,10 @@
 import { useState, useEffect} from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { MessageSquare, Search } from "lucide-react";
+import { MessageSquare, Search, X } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import BlogSidebar from "@/components/blog/RightSidebar";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 
 interface BlogPost {
 	_id: string;
@@ -29,7 +29,9 @@ export default function BlogPage() {
 	const [loading, setLoading] = useState(true);
 	const [searchQuery, setSearchQuery] = useState("");
 	const searchParams = useSearchParams();
+	const router = useRouter();
 	const archiveFilter = searchParams.get("archive");
+	const tagFilter = searchParams.get("tag");
 
 	useEffect(() => {
 		fetchBlogs();
@@ -50,8 +52,7 @@ export default function BlogPage() {
 		}
 	};
 
-	// Search effect
-	// Search effect
+	// Search and filter effect
 	useEffect(() => {
 		const query = searchQuery.toLowerCase();
 		let filtered = blogPosts.filter((post) => {
@@ -78,8 +79,38 @@ export default function BlogPage() {
 			});
 		}
 
+		// Apply tag filter if present
+		if (tagFilter) {
+			filtered = filtered.filter((post) =>
+				post.tags.some((tag) => tag.toLowerCase() === tagFilter.toLowerCase())
+			);
+		}
+
 		setFilteredPosts(filtered);
-	}, [searchQuery, blogPosts, archiveFilter]);
+	}, [searchQuery, blogPosts, archiveFilter, tagFilter]);
+
+	const clearAllFilters = () => {
+		setSearchQuery("");
+		router.push("/blog");
+	};
+
+	const getActiveFiltersCount = () => {
+		let count = 0;
+		if (searchQuery) count++;
+		if (archiveFilter) count++;
+		if (tagFilter) count++;
+		return count;
+	};
+
+	const getFilterDescription = () => {
+		const filters = [];
+		if (searchQuery) filters.push(`search: "${searchQuery}"`);
+		if (archiveFilter) filters.push(`archive: ${archiveFilter}`);
+		if (tagFilter) filters.push(`tag: ${tagFilter}`);
+		
+		if (filters.length === 0) return "Showing all posts";
+		return `Filtered by ${filters.join(", ")}`;
+	};
 
 	if (loading) {
 		return (
@@ -106,7 +137,7 @@ export default function BlogPage() {
 					</div>
 
 					{/* Search */}
-					<div className='flex flex-col sm:flex-row items-center gap-4 mb-8'>
+					<div className='flex flex-col sm:flex-row items-center gap-4 mb-6'>
 						<input
 							type='text'
 							placeholder='Search by title, tag, or date'
@@ -114,7 +145,23 @@ export default function BlogPage() {
 							onChange={(e) => setSearchQuery(e.target.value)}
 							className='w-full sm:w-80 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
 						/>
-						{/* <Search className='border-2 p-4 rounded-md'></Search> */}
+					</div>
+
+					{/* Filter Status */}
+					<div className='flex items-center justify-between mb-6 p-3 bg-gray-50 rounded-md'>
+						<div className='flex items-center gap-3'>
+							<span className='text-sm text-gray-600'>
+								{getFilterDescription()} ({filteredPosts.length} post{filteredPosts.length !== 1 ? 's' : ''})
+							</span>
+						</div>
+						{getActiveFiltersCount() > 0 && (
+							<button
+								onClick={clearAllFilters}
+								className='flex items-center gap-1 px-3 py-1 text-sm text-red-600 hover:text-red-800 hover:bg-red-50 rounded-md transition-colors'>
+								<X className='h-3 w-3' />
+								Clear filters
+							</button>
+						)}
 					</div>
 
 					{/* Blog Posts */}
@@ -123,14 +170,6 @@ export default function BlogPage() {
 							<div
 								key={post._id}
 								className='border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow'>
-								{/* <div className='relative h-48'>
-								<Image
-									src={post.image || "/placeholder.svg"}
-									alt={post.title}
-									fill
-									className='object-cover'
-								/>
-							</div> */}
 								<div className='relative h-72'>
 									{post.mediaType === "video" ? (
 										post.mediaUrl?.includes("youtube.com") ||

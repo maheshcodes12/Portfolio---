@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 interface BlogPost {
 	_id: string;
 	title: string;
+	slug: string;
 	createdAt: string;
 	tags: string[];
 }
@@ -13,6 +15,8 @@ interface BlogPost {
 export default function BlogSidebar({ author, tags }: any) {
 	const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
 	const [loading, setLoading] = useState(true);
+	const searchParams = useSearchParams();
+	const activeTag = searchParams.get("tag");
 
 	useEffect(() => {
 		const fetchBlogs = async () => {
@@ -32,7 +36,7 @@ export default function BlogSidebar({ author, tags }: any) {
 	}, []);
 
 	const getUniqueTags = () => {
-		return [...new Set(tags)];
+		return [...new Set(tags)].sort();
 	};
 
 	const getArchives = () => {
@@ -61,13 +65,20 @@ export default function BlogSidebar({ author, tags }: any) {
 				{/* Tags */}
 				<div>
 					<h2 className='font-semibold text-gray-800 mb-2'>TAGS</h2>
-					{getUniqueTags().map((tag: any) => (
-						<span
-							key={tag}
-							className='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded mr-2 mb-2'>
-							{tag}
-						</span>
-					))}
+					<div className="flex flex-wrap gap-1">
+						{getUniqueTags().map((tag: any) => (
+							<Link
+								key={tag}
+								href={`/blog?tag=${encodeURIComponent(tag)}`}
+								className={`inline-block text-xs px-2 py-1 rounded transition-colors cursor-pointer ${
+									activeTag === tag
+										? 'bg-blue-500 text-white'
+										: 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+								}`}>
+								{tag}
+							</Link>
+						))}
+					</div>
 				</div>
 
 				{/* Recent Posts */}
@@ -77,7 +88,7 @@ export default function BlogSidebar({ author, tags }: any) {
 						{recentPosts.map((post) => (
 							<li key={post._id}>
 								<Link
-									href={`/blog/${post.title}`}
+									href={`/blog/${post.slug}`}
 									className='hover:underline text-sm text-black'>
 									{post.title}
 								</Link>
