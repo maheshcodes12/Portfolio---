@@ -89,81 +89,7 @@ export default function ContactPage() {
 				</div>
 
 				<div className='grid grid-cols-1 lg:grid-cols-1 gap-12'>
-					{/* Contact Form */}
-					{/* <div className='bg-white border border-gray-200 rounded-lg p-8'>
-						<h2 className='text-2xl font-semibold text-gray-900 mb-6'>
-							Send a Message
-						</h2>
-						<form
-							onSubmit={handleSubmit}
-							className='space-y-6'>
-							<div>
-								<Label htmlFor='name'>Name</Label>
-								<Input
-									id='name'
-									name='name'
-									type='text'
-									value={formData.name}
-									onChange={handleChange}
-									required
-									className='mt-1'
-								/>
-							</div>
 
-							<div>
-								<Label htmlFor='email'>Email</Label>
-								<Input
-									id='email'
-									name='email'
-									type='email'
-									value={formData.email}
-									onChange={handleChange}
-									required
-									className='mt-1'
-								/>
-							</div>
-
-							<div>
-								<Label htmlFor='subject'>Subject</Label>
-								<Input
-									id='subject'
-									name='subject'
-									type='text'
-									value={formData.subject}
-									onChange={handleChange}
-									required
-									className='mt-1'
-								/>
-							</div>
-
-							<div>
-								<Label htmlFor='message'>Message</Label>
-								<Textarea
-									id='message'
-									name='message'
-									rows={6}
-									value={formData.message}
-									onChange={handleChange}
-									required
-									className='mt-1'
-								/>
-							</div>
-
-							{loading ? (
-								<Button
-									type='submit'
-									className='w-full'>
-									Sending <Loader></Loader>
-								</Button>
-							) : (
-								<Button
-									type='submit'
-									className='w-full'>
-									Send Message
-								</Button>
-							)}
-						</form>
-					</div> */}
 
 					{/* Contact Information */}
 					<div className='space-y-8'>
@@ -183,8 +109,6 @@ export default function ContactPage() {
 								</div>
 
 								<div className='flex items-start'>
-									{/* <MapPin className='h-6 w-6 text-gray-600 mr-4 mt-1' />
-									 */}
 									<Clock className='h-6 w-6 text-gray-600 mr-4 mt-1' />
 
 									<div>

@@ -1,6 +1,5 @@
 "use client";
 import { Badge } from "@/components/ui/badge";
-import FlipbookViewer from "@/components/flipbook/Book";
 
 export default function TalksPage() {
 	const talks = [

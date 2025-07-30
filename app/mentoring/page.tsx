@@ -42,26 +42,7 @@ export default function MentoringPage() {
 
 				{/* Mentoring Philosophy */}
 				<section className='mb-16'>
-					{/* <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-						{mentoringPhilosophy.map((item, index) => {
-							const IconComponent = item.icon;
-							return (
-								<div
-									key={index}
-									className='bg-white border border-gray-200 rounded-lg p-6'>
-									<div className='flex items-center mb-4'>
-										<div className='p-3 bg-gray-100 rounded-lg mr-4'>
-											<IconComponent className='h-6 w-6 text-gray-700' />
-										</div>
-										<h3 className='text-xl font-semibold text-gray-900'>
-											{item.title}
-										</h3>
-									</div>
-									<p className='text-gray-600'>{item.description}</p>
-								</div>
-							);
-						})}
-					</div> */}
+					
 					<div className='bg-white border border-gray-200 rounded-lg p-6'>
 						<div className='flex items-center mb-4'>
 							<div className='p-3 bg-gray-100 rounded-lg mr-4'>
@@ -88,7 +69,7 @@ export default function MentoringPage() {
 								rel='noopener noreferrer'
 								className='shrink-0 mr-4'>
 								<img
-									src='/sigplan.png' // Replace with your own thumbnail path
+									src='/sigplan.png'
 									alt='SIGPLAN Blog'
 									className='w-20 h-20 rounded object-cover'
 								/>
@@ -128,7 +109,7 @@ export default function MentoringPage() {
 
 							<div className='flex items-center justify-center gap-4 flex-wrap'>
 								<a
-									href='#' // Replace with more info link
+									href='#' 
 									className='text-blue-700 hover:underline text-sm font-medium'>
 									Details Coming Soon &rarr;
 								</a>

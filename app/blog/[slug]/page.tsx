@@ -195,17 +195,6 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 					</div>
 				</div>
 
-				{/* Featured Image */}
-				{/* <div className='relative h-64 md:h-96 mb-8 rounded-lg overflow-hidden'>
-					<Image
-						src={post.image || "/placeholder.svg"}
-						alt={post.title}
-						fill
-						className='object-cover'
-						priority
-					/>
-				</div> */}
-
 				<div className='relative h-96'>
 					{post.mediaType === "video" ? (
 						post.mediaUrl?.includes("youtube.com") ||

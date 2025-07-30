@@ -154,7 +154,6 @@ export default function PublicationsPage() {
 						</div>
 					))}
 				</div>
-				{/* </TabsContent> */}
 			</div>
 		</main>
 	);

@@ -56,16 +56,6 @@ export default function Header() {
 						className='text-sm font-medium hover:underline underline-offset-4'>
 						Blog
 					</Link>
-					{/* <Link
-						href='/research'
-						className='text-sm font-medium hover:underline underline-offset-4'>
-						Research
-					</Link>
-					<Link
-						href='/awards'
-						className='text-sm font-medium hover:underline underline-offset-4'>
-						Awards
-					</Link> */}
 					<Link
 						href='/resume.pdf'
 						target='blanck'
