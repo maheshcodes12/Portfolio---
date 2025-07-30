@@ -8,21 +8,33 @@ export default function TalksPage() {
 			id: 1,
 			title: "LLM-Vectorizer: LLM-based Verified Loop Vectorizer Invited talk.",
 			venue:
-				"UC Santa Cruz, Uber Technologies,PNW PLSE 2024, CGO 2025, LATHC 2025.",
+				" UC Santa Cruz, UC Berkeley, Uber Technologies, PNW PLSE 2024, CGO 2025, LATHC 2025",
 			date: "2024, 2025",
 			type: "Keynote",
-			link:""
+			link:"/talks/Jubi_LLM_Vectorizer_Talk_ext.pdf"
 		},
 		{
 			id: 2,
 			title:
-				" Improving Compiler Construction using Formal Methods, invited talk.",
+				" Improving Compiler Construction using Formal Methods, Invited talk.",
 			venue:
 				"UC Berkeley Programming Systems Seminar group, and Microsoft Research.",
 			date: "June 2020",
 			type: "Invited Talk",
 			video: "https://www.youtube.com/watch?v=de8Ak0nY1hA",
-			link:""
+			link:"/talks/slides-improving-compiler-construction-talk.pdf"
+
+		},
+		{
+			id: 5,
+			title:
+				"Testing Static Analyses for Precision and Soundness",
+			venue:
+				"CGO 2020",
+			date: "Feb 2020",
+			type: "Invited Talk",
+			video: "",
+			link:"/talks/Slides-Testing-Static-Analyses-CGO20.pdf"
 
 		},
 		{
@@ -33,7 +45,7 @@ export default function TalksPage() {
 			date: "October 2017",
 			type: "Guest Lecture",
 			video: "https://www.youtube.com/watch?v=WyMTa2_yNHQ&t=526s",
-			link:"jnn"
+			link:"/talks/Slides-exploiting-and-improving-llvm-DFA.pdf"
 
 		},
 		{
@@ -80,7 +92,7 @@ export default function TalksPage() {
 								</h2>
 							</div>
 							<p className='text-gray-600 text-lg mb-2'>{talk.venue}</p>
-							<p className='text-gray-500 mb-4'>{talk.date} {talk.link.length > 0 && <span className="text-blue-600"> | Slides</span>}</p>
+							<p className='text-gray-500 mb-4'>{talk.date} {talk.link.length > 0 && <a target='_blank' href={`${talk.link}`}><span className="text-blue-600"> | Slides</span></a>}</p>
 							<p className='text-gray-600 text-lg mb-4'>{talk.abstract || ""}</p>
 							
 
