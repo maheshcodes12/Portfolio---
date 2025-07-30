@@ -36,6 +36,18 @@ export default function TalksPage() {
 			link:"jnn"
 
 		},
+		{
+			id: 4,
+			title:
+				"You're NOT Alone: Chasing the Journey of Learning and Belonging, Invited Talk.",
+			venue: "Community.o Summit",
+			abstract:"Have you experienced question reluctance? Have you found yourself isolated, struggling constantly to feel better and make progress? Has imposter syndrome kicked in when you finally started to feel better? These are all real things and very common among all of us, especially beginners. This talk is about one such experience that a PhD student went through and the solutions she found helpful while chasing her journey of learning in the past one decade. Maybe these solutions might not help you, but some of you will feel a lot more comfortable resonating with the similar experiences.",
+			date: "2021",
+			type: "Invited Talk",
+			video: "https://www.youtube.com/watch?v=JbmR1nEfnh8",
+			link:""
+
+		},
 	];
 
 	function extractYouTubeId(url: string) {
@@ -69,7 +81,8 @@ export default function TalksPage() {
 							</div>
 							<p className='text-gray-600 text-lg mb-2'>{talk.venue}</p>
 							<p className='text-gray-500 mb-4'>{talk.date} {talk.link.length > 0 && <span className="text-blue-600"> | Slides</span>}</p>
-							<div className="text-blue-600"></div>
+							<p className='text-gray-600 text-lg mb-4'>{talk.abstract || ""}</p>
+							
 
 							<div className='w-full flex justify-center'>
 								{talk.video && (

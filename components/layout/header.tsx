@@ -1,9 +1,13 @@
+'use client';
+import { useState } from 'react';
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export default function Header() {
+
+	const [open, setOpen] = useState(false);
 	return (
 		<header className=' top-0 z-50 w-full border-b  bg-gray-800 text-white'>
 			<div className='container mx-auto max-w-6xl flex h-16 items-center justify-between px-4 md:px-6 lg:px-8'>
@@ -76,7 +80,7 @@ export default function Header() {
 				</nav>
 
 				{/* Mobile Navigation */}
-				<Sheet>
+				<Sheet open={open} onOpenChange={setOpen}>
 					<SheetTrigger asChild>
 						<Button
 							variant='outline'
@@ -90,46 +94,55 @@ export default function Header() {
 						<nav className='flex flex-col gap-4 mt-8'>
 							<Link
 								href='/'
+								onClick={() => setOpen(false)}
 								className='text-base font-medium hover:underline'>
-								Home
+								About Me
 							</Link>
 							<Link
-								href='/research'
+								href='/projects'
+								onClick={() => setOpen(false)}
 								className='text-base font-medium hover:underline'>
 								Research
 							</Link>
 							<Link
-								href='/publications'
+								href='/papers'
+								onClick={() => setOpen(false)}
 								className='text-base font-medium hover:underline'>
-								Publications
+								Papers
 							</Link>
 							<Link
-								href='/blog'
+								href='/talks'
+								onClick={() => setOpen(false)}
 								className='text-base font-medium hover:underline'>
-								Blog
-							</Link>
-							<Link
-								href='/awards'
-								className='text-base font-medium hover:underline'>
-								Awards
+								Talks
 							</Link>
 							<Link
 								href='/services'
+								onClick={() => setOpen(false)}
 								className='text-base font-medium hover:underline'>
 								Services
 							</Link>
 							<Link
 								href='/mentoring'
+								onClick={() => setOpen(false)}
 								className='text-base font-medium hover:underline'>
 								Mentoring
 							</Link>
 							<Link
-								href='/about'
+								href='/blog'
+								onClick={() => setOpen(false)}
 								className='text-base font-medium hover:underline'>
-								About
+								Blog
+							</Link>
+							<Link
+								href='/resume.pdf'
+								onClick={() => setOpen(false)}
+								className='text-base font-medium hover:underline'>
+								CV
 							</Link>
 							<Link
 								href='/contact'
+								onClick={() => setOpen(false)}
 								className='text-base font-medium hover:underline'>
 								Contact
 							</Link>

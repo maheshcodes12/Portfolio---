@@ -148,10 +148,10 @@ export default function PublicationsPage() {
 			<div className='container mx-auto max-w-6xl'>
 				<div className='mb-10'>
 					<h1 className='text-4xl font-bold text-gray-900 mb-4'>Papers</h1>
-					<p className='text-xl text-gray-600 max-w-3xl'>
+					{/* <p className='text-xl text-gray-600 max-w-3xl'>
 						(Updated list of papers with URLs attached) - check that for
 						details.
-					</p>
+					</p> */}
 				</div>
 
 				{/* <Tabs
