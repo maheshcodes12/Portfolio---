@@ -24,7 +24,7 @@ export default function ProjectsPage() {
 					technologies={["Kernel, Linux"]}
 					link={""}
 					link2={"https://dl.acm.org/doi/10.1145/3696443.3708929"}
-					imageUrl='/project/llmvect.png'
+					imageUrl='/projects/img-llm-vectorizer.png'
 				/>
 				<ProjectShowcase
 					title='Accera: Compiler to accelerate AI workloads'
@@ -48,7 +48,7 @@ export default function ProjectsPage() {
 					technologies={["Compiler"]}
 					link={"https://github.com/jubitaneja/phd-dissertation"}
 					link2={""}
-					imageUrl='/project/formal.png'
+					imageUrl='/projects/img-improving-compiler-construction.png'
 				/>
 				<ProjectShowcase
 					title='Testing LLVM’s Static Analyses for Precision and Soundness'
@@ -60,7 +60,7 @@ export default function ProjectsPage() {
 					technologies={["Compiler"]}
 					link={"https://github.com/jubitaneja/souper-cgo20-artifact"}
 					link2={""}
-					imageUrl='/project/testing.png'
+					imageUrl='/projects/Testing-static-analyses-project-img.png'
 				/>
 				<ProjectShowcase
 					title='Souper: Superoptimizer for LLVM IR'
@@ -72,7 +72,7 @@ export default function ProjectsPage() {
 					technologies={["Compiler"]}
 					link={"https://github.com/google/souper"}
 					link2={""}
-					imageUrl='/project/souper.png'
+					imageUrl='/projects/img-souper.png'
 				/>
 				<ProjectShowcase
 					title='Automatic Generation of a PeepHole Optimizer'
@@ -82,7 +82,7 @@ export default function ProjectsPage() {
 					technologies={["Compiler"]}
 					link={"https://github.com/jubitaneja/cranelift-peepholes"}
 					link2={""}
-					imageUrl='/project/peephole.png'
+					imageUrl='/projects/img-automatic-generation-of-peephole-opt.png'
 				/>
 			</div>
 		</main>
