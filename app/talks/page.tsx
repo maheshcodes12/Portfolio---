@@ -5,19 +5,19 @@ export default function TalksPage() {
 	const talks = [
 		{
 			id: 1,
-			title: "LLM-Vectorizer: LLM-based Verified Loop Vectorizer Invited talk.",
+			title: "LLM-Vectorizer: LLM-based Verified Loop Vectorizer.",
 			venue:
 				" UC Santa Cruz, UC Berkeley, Uber Technologies, PNW PLSE 2024, CGO 2025, LATHC 2025",
-			date: "2024, 2025",
+			date: "2024-2025",
 			type: "Keynote",
 			link:"/talks/Jubi_LLM_Vectorizer_Talk_ext.pdf"
 		},
 		{
 			id: 2,
 			title:
-				" Improving Compiler Construction using Formal Methods, Invited talk.",
+				" Improving Compiler Construction using Formal Methods.",
 			venue:
-				"UC Berkeley Programming Systems Seminar group, and Microsoft Research.",
+				"UC Berkeley Programming Systems Seminar group, Microsoft Research",
 			date: "June 2020",
 			type: "Invited Talk",
 			video: "https://www.youtube.com/watch?v=de8Ak0nY1hA",
@@ -39,8 +39,8 @@ export default function TalksPage() {
 		{
 			id: 3,
 			title:
-				"Exploiting and Improving LLVM’s Dataflow Analyses using a Superoptimizer, Student Research Competition.",
-			venue: "LLVM Developers’ Meeting, San Jose, CA, USA.",
+				"Exploiting and Improving LLVM’s Dataflow Analyses using a Superoptimizer.",
+			venue: "2017 LLVM Developers' Meeting",
 			date: "October 2017",
 			type: "Guest Lecture",
 			video: "https://www.youtube.com/watch?v=WyMTa2_yNHQ&t=526s",
@@ -51,9 +51,9 @@ export default function TalksPage() {
 			id: 4,
 			title:
 				"You're NOT Alone: Chasing the Journey of Learning and Belonging, Invited Talk.",
-			venue: "Community.o Summit",
+			venue: " Community.o Summit (Hosted by LLVM Foundation)",
 			abstract:"Have you experienced question reluctance? Have you found yourself isolated, struggling constantly to feel better and make progress? Has imposter syndrome kicked in when you finally started to feel better? These are all real things and very common among all of us, especially beginners. This talk is about one such experience that a PhD student went through and the solutions she found helpful while chasing her journey of learning in the past one decade. Maybe these solutions might not help you, but some of you will feel a lot more comfortable resonating with the similar experiences.",
-			date: "2021",
+			date: "March 2021",
 			type: "Invited Talk",
 			video: "https://www.youtube.com/watch?v=JbmR1nEfnh8",
 			link:""
