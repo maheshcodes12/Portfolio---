@@ -115,11 +115,11 @@ export default function ProfessionalInvolvement() {
 										) : (
 											item.label
 										)}
-										{item.date && (
+										{/* {item.date && (
 											<span className='block text-xs text-gray-500'>
 												{item.date}
 											</span>
-										)}
+										)} */}
 									</li>
 								))}
 						</ul>
